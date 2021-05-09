@@ -23,11 +23,23 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW4-yC-FC8">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem image="chevron.backward" catalog="system" id="lsE-io-iqN"/>
+                                    <barButtonItem image="chevron.backward" catalog="system" id="lsE-io-iqN">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="BYZ-38-t0r" id="9Sc-fZ-k1R"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SGe-JC-gI5"/>
-                                    <barButtonItem systemItem="refresh" id="Uqn-dA-FCl"/>
+                                    <barButtonItem systemItem="refresh" id="Uqn-dA-FCl">
+                                        <connections>
+                                            <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" id="nbs-ds-tG8"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4Qm-7N-h4P"/>
-                                    <barButtonItem title="Item" image="chevron.forward" catalog="system" id="wzM-qw-4zI"/>
+                                    <barButtonItem title="Item" image="chevron.forward" catalog="system" id="wzM-qw-4zI">
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="BYZ-38-t0r" id="50e-Jr-5x5"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2V-Oe-aqa">
@@ -56,6 +68,10 @@
                             <constraint firstItem="X2V-Oe-aqa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zKc-IF-XGC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="seachBar" destination="REL-Zc-Q2S" id="4ds-sd-Z6D"/>
+                        <outlet property="webView" destination="X2V-Oe-aqa" id="I9a-te-iJ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
