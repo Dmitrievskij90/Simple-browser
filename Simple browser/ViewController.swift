@@ -48,7 +48,7 @@ class ViewController: UIViewController {
 extension ViewController: WKNavigationDelegate, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         seachBar.resignFirstResponder()
-        let defaultAddress = "https://www."
+        let defaultAddress = "http://www."
 
         if let urlstring = seachBar.text {
             guard let url = URL(string: "\(defaultAddress)\(urlstring)") else {
