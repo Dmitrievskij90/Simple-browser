@@ -36,6 +36,10 @@ class ViewController: UIViewController {
         webView.reload()
     }
 
+    @IBAction private func stopButtonPressed(_ sender: UIBarButtonItem) {
+        webView.stopLoading()
+    }
+
     private func loadDefaultPage() {
         guard let url = URL(string: "https://www.google.com") else {
             return
