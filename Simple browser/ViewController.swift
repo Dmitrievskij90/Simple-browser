@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
+        seachBar.delegate = self
 
         loadDefaultPage()
     }
@@ -44,5 +45,19 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: WKNavigationDelegate {
+extension ViewController: WKNavigationDelegate, UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        seachBar.resignFirstResponder()
+        let defaultAddress = "https://www."
+
+        if let urlstring = seachBar.text {
+            guard let url = URL(string: "\(defaultAddress)\(urlstring)") else {
+                return
+            }
+            let request = URLRequest(url: url)
+            webView.load(request)
+        } else {
+            print("Can't load page")
+        }
+    }
 }
