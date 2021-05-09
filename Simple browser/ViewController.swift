@@ -20,12 +20,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func backButtonPressed(_ sender: UIBarButtonItem) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
     }
 
     @IBAction private func nextButtonPressed(_ sender: Any) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
     }
 
     @IBAction private func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        webView.reload()
     }
 
     private func loadDefaultPage() {
